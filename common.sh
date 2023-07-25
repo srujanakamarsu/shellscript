@@ -15,6 +15,7 @@ func_apppreq()
     func_exit_status
  
     echo -e  "\e[36m>>>>>> create application user <<<<<<\e[0m" | tee -a /tmp.roboshop.log
+    id roboshop &>>${log}
     useradd roboshop &>>${log}
     func_exit_status
 
