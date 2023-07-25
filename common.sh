@@ -21,7 +21,7 @@ func_nodejs()
     mkdir /app &>>${log}
 
     echo -e  "\e[36m>>>>>> download application content <<<<<<\e[0m"
-    curl -o /tmp/${component}zip https://roboshop-artifacts.s3.amazonaws.com/${component}zip &>>${log}
+    curl -o /tmp/${component}zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
 
     echo -e  "\e[36m>>>>>> extract application content <<<<<<\e[0m" 
     cd /app 
