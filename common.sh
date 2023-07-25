@@ -47,7 +47,7 @@ func_systemd()
 }
 
 func_schema_setup(){
-    if [ ${schema_type}=="mongodb" ]; then
+    if [ "${schema_type}" == "mongodb" ]; then
         echo -e  "\e[36m>>>>>> install mongo client <<<<<<\e[0m" | tee -a /tmp.roboshop.log
         yum install mongodb-org-shell -y &>>${log}
         func_exit_status
@@ -56,7 +56,7 @@ func_schema_setup(){
         mongo --host mongodb.vyshu.online </app/schema/${component}.js &>>${log}
         func_exit_status
     fi
-    if [ ${schema_type}=="mysql" ]; then
+    if [ "${schema_type}" == "mysql" ]; then
         echo -e  "\e[36m>>>>>> install mysql client <<<<<<\e[0m" | tee -a /tmp.roboshop.log
         yum install mysql -y &>>${log}
         func_exit_status
