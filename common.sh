@@ -23,6 +23,7 @@ func_apppreq()
 
     echo -e  "\e[36m>>>>>> cleanup existing application content  <<<<<<\e[0m" | tee -a /tmp.roboshop.log
     rm -rf /app &>>${log}
+    func_exit_status
 
     echo -e  "\e[36m>>>>>> create application directory <<<<<<\e[0m" | tee -a /tmp.roboshop.log
     mkdir /app &>>${log}
