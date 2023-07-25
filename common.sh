@@ -16,7 +16,9 @@ func_apppreq()
  
     echo -e  "\e[36m>>>>>> create application user <<<<<<\e[0m" | tee -a /tmp.roboshop.log
     id roboshop &>>${log}
-    useradd roboshop &>>${log}
+    if [ $? -ne 0 ]; then
+        useradd roboshop &>>${log}
+    fi
     func_exit_status
 
     echo -e  "\e[36m>>>>>> cleanup existing application content  <<<<<<\e[0m" | tee -a /tmp.roboshop.log
@@ -27,13 +29,12 @@ func_apppreq()
     func_exit_status
 
     echo -e  "\e[36m>>>>>> download application content <<<<<<\e[0m" | tee -a /tmp.roboshop.log
-    curl -o /tmp/${component}zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
+    curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
     func_exit_status
 
     echo -e  "\e[36m>>>>>> extract application content <<<<<<\e[0m" | tee -a /tmp.roboshop.log
     cd /app 
-    unzip /tmp/${component}zip &>>${log}
-    cd /app 
+    unzip /tmp/${component}.zip &>>${log}
     func_exit_status
 }
 
