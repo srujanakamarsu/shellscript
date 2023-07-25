@@ -1,3 +1,7 @@
+component=cart
+source common.sh
+func_nodejs
+
 cp cart.service /etc/systemd/system/cart.service
 
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
