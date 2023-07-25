@@ -35,7 +35,7 @@ func_nodejs()
     yum install mongodb-org-shell -y &>>${log}
 
     echo -e  "\e[36m>>>>>> load ${component} schema <<<<<<\e[0m"
-    mongo --host mongodb.vyshu.online </app/schema/${component}js &>>${log}
+    mongo --host mongodb.vyshu.online </app/schema/${component}.js &>>${log}
 
     echo -e  "\e[36m>>>>>> start ${component} service <<<<<<\e[0m"
     systemctl daemon-reload &>>${log}
