@@ -81,13 +81,13 @@ func_java()
 
 func_python()
 {
-    echo -e  "\e[36m>>>>>> install python <<<<<<\e[0m" | tee -a /tmp.roboshop.log
-    yum install python36 gcc python3-devel -y
+    echo -e  "\e[36m>>>>>> build ${component} service <<<<<<\e[0m" | tee -a /tmp.roboshop.log
+    yum install python36 gcc python3-devel -y &>>${log}
 
     func_apppreq 
 
     echo -e  "\e[36m>>>>>> install pip <<<<<<\e[0m" | tee -a /tmp.roboshop.log
-    pip3.6 install -r requirements.txt
+    pip3.6 install -r requirements.txt &>>${log}
     
     func_systemd
 }
