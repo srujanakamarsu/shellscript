@@ -1,6 +1,0 @@
-echo -e "\e[31mHELLO WORLD\e[0m"
-echo -e "\e[32mHELLO WORLD\e[0m"
-echo -e "\e[33mHELLO WORLD\e[0m"
-echo -e "\e[34mHELLO WORLD\e[0m"
-echo -e "\e[35mHELLO WORLD\e[0m"
-echo -e "\e[36mHELLO WORLD\e[0m"
