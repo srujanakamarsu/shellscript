@@ -1,3 +1,9 @@
+rabbitmq_app_password=$1
+if [ -z "${rabbitmq_app_password}" ] ; then
+    echo "rabbitmq app user password missing"
+    exit 1
+fi
+
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
 yum install rabbitmq-server -y 
