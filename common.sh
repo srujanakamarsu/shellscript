@@ -75,7 +75,7 @@ func_java()
     yum install mysql -y 
 
     echo -e  "\e[36m>>>>>> load schema <<<<<<\e[0m"
-    mysql -h mysql.vyshu.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
+    mysql -h mysql.vyshu.online -uroot -pRoboShop@1 < /app/schema/${component}.sql
 
     func_systemd
 }
