@@ -22,7 +22,7 @@ func_apppreq()
 
 func_systemd()
 {
-    echo -e  "\e[36m>>>>>> start user service <<<<<<\e[0m" | tee -a /tmp.roboshop.log
+    echo -e  "\e[36m>>>>>> start ${component} service <<<<<<\e[0m" | tee -a /tmp.roboshop.log
     systemctl daemon-reload &>>${log}
     systemctl enable ${component} &>>${log}
     systemctl restart ${component} &>>${log}
