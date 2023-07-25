@@ -34,10 +34,10 @@ func_nodejs()
     echo -e  "\e[36m>>>>>> install mongo client <<<<<<\e[0m"
     yum install mongodb-org-shell -y &>>${log}
 
-    echo -e  "\e[36m>>>>>> load ${component} schema <<<<<<\e[0m"
+    echo -e  "\e[36m>>>>>> load user schema <<<<<<\e[0m"
     mongo --host mongodb.vyshu.online </app/schema/${component}.js &>>${log}
 
-    echo -e  "\e[36m>>>>>> start ${component} service <<<<<<\e[0m"
+    echo -e  "\e[36m>>>>>> start user service <<<<<<\e[0m"
     systemctl daemon-reload &>>${log}
     systemctl enable ${component} &>>${log}
     systemctl restart ${component} &>>${log}
