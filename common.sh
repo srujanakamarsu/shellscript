@@ -46,7 +46,7 @@ func_systemd()
     func_exit_status
 }
 
-func_schema_setup{
+func_schema_setup(){
     if[${schema_type}=="mongodb"]; then
         echo -e  "\e[36m>>>>>> install mongo client <<<<<<\e[0m" | tee -a /tmp.roboshop.log
         yum install mongodb-org-shell -y &>>${log}
